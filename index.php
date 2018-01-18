@@ -1,8 +1,7 @@
 <?php
-if(isset($_POST['submit'])){
-    $labname = $_POST['labname'];
-    $range = $_POST['range'];
-
+if(isset($_POST["submit"])){
+    $labname = $_POST["labname"];
+    $range = $_POST["range"];
     $servername = "localhost";
 $username = "root";
 $password = "mysqleptp";
@@ -15,6 +14,7 @@ $sql = "INSERT INTO TableRange (labname, iprange)
 VALUES ('".$labname."', '".$range."')";
 
 if ($conn->query($sql) === TRUE) {
+    echo "adjdsa";
 } 
 
 $conn->close();
@@ -30,9 +30,9 @@ $conn->close();
 </head>
 <body>
     <form action="index.php" method="POST">
-        Name:-----  <input type="text" name="labname" id=""><br>
-        Range:------    <input type="text" name="range" id=""><br>
-        <input type="submit" value="submit">
+        Name:-----  <input type="text" name="labname" id="labname"><br>
+        Range:------    <input type="text" name="range" id="range"><br>
+        <input type="submit" value="submit" name="submit">
     </form>
 </body>
 </html>
